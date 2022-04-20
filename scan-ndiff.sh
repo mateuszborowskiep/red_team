@@ -1,5 +1,6 @@
 #!/bin/sh
-TARGETS="/home/Projects/red_team/targets.txt"
+# requirement packages nmap, ndiff, metasploit-module, xsltproc
+TARGETS="/home/Projects/red_team/targets.txt"       # change this
 OPTIONS="-sV -Pn -script vuln -iL "
 EXPORT="-oX"
 date=`date +%F`
@@ -13,13 +14,13 @@ xsltproc scan-$date.xml -o vuln-$date.htm
 
 echo '*** COMPARE RESULTS ***'
 if [ -e scan-prev.xml ]; then
-    ndiff scan-prev.xml scan-$date.xml > diff-$date
+    ndiff scan-prev.xml scan-$date.xml > diff-$date.xml
     echo "*** NDIFF RESULTS ***"
     cat diff-$date
     echo
 fi
 
-#xsltproc diff-$date.xml -o vuln_changes-$date.html  
+xsltproc diff-$date.xml -o vuln_changes-$date.html  
 ln -sf scan-$date.xml scan.prev.xml 
 
 # report results in vuln-$date.html and vuln_changes-$date.html 
