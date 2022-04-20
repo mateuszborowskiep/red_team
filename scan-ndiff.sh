@@ -34,4 +34,4 @@ echo 'metasploit is scanning...'
 service postgresql start
         
 # 
-msfconsole -q -o "metasploit_scan.txt" -x "setg rhosts file:$TARGETS ; setg user_file $USER_FILE ; setg pass_file $PASS_FILE resource $METASPLOIT_SCAN_SCRIPT ; exit -y"
+msfconsole -q -o "metasploit_scan.txt" -x "setg rhosts file:$TARGETS ; setg user_file $USER_FILE ; setg pass_file $PASS_FILE ; resource $METASPLOIT_SCAN_SCRIPT ; exit -y"
