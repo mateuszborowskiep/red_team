@@ -1,5 +1,5 @@
 ### METASPLOIT SCAN SCRIPT ###
-
+## https://www.offensive-security.com/metasploit-unleashed/ - guide 
 
 ### VERSIONS ###
 
@@ -19,11 +19,33 @@ use auxiliary/scanner/smtp/smtp_version
 run
 use auxiliary/scanner/printer/printer_version_info
 run
+use auxiliary/scanner/ftp/anonymous
+run 
+use auxiliary/scanner/telnet/telnet_version
+run 
+use auxiliary/scanner/vmware/vmware_enum_users
+run 
+use auxiliary/scanner/vnc/vnc_none_auth
+run
 
+## DEFAULT SHARES AND USERS ##
+use auxiliary/scanner/smb/smb_enumshares
+run
+use auxiliary/scanner/smb/smb_enumusers
+run 
+use auxiliary/scanner/smb/smb_lookupsid
+run 
 
 ### MAIN VULN ###
-
 use auxiliary/scanner/smb/smb_ms17_010
 run
 use auxiliary/scanner/rdp/ms12_020_check
+run
+
+### PASSWORD BRUTEFORCE ###
+use auxiliary/scanner/ftp/ftp_login
+run
+use auxiliary/scanner/ssh/ssh_login
+run
+use auxiliary/scanner/telnet/telnet_login
 run

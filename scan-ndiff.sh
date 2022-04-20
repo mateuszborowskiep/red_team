@@ -3,6 +3,8 @@
 TARGETS="/home/Projects/red_team/targets.txt"       # change this
 OPTIONS="-sV -Pn -script vuln -iL "
 EXPORT="-oX"
+USER_FILE='/home/Projects/red_team/users.txt'       # change this
+PASS_FILE='/home/Projects/red_team/passwords.txt'   # change this 
 date=`date +%F`
 # METASPLOIT SCAN SCRIPT
 METASPLOIT_SCAN_SCRIPT='./metasploit_scan_script'
@@ -32,4 +34,4 @@ echo 'metasploit is scanning...'
 service postgresql start
         
 # 
-msfconsole -q -o "metasploit_scan.txt" -x "setg rhosts file:$TARGETS ; resource $METASPLOIT_SCAN_SCRIPT ; exit -y"
+msfconsole -q -o "metasploit_scan.txt" -x "setg rhosts file:$TARGETS ; setg $USER_FILE ; setg $PASS_FILE resource $METASPLOIT_SCAN_SCRIPT ; exit -y"
