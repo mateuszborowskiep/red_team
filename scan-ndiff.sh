@@ -1,12 +1,12 @@
 #!/bin/sh
 # requirement packages nmap, ndiff, metasploit-module, xsltproc
 TARGETS="./targets.txt"       # change this
-OPTIONS="-sV -Pn -script vuln -iL "
+OPTIONS="-sV -Pn -script vuln,dns-brute,http-brute,http-form-brute,imap-brute,ipmi-brute,iscsi-brute,krb5-enum-users,ldap-brute,mikrotik-routeros-brute, -iL "
 EXPORT="-oX"
 USER_FILE='./users.txt'       # change this
 PASS_FILE='./passwords.txt'   # change this 
 date=`date +%F`
-# METASPLOIT SCAN SCRIPT
+# METASPLOIT SCAN SCRIPT 
 METASPLOIT_SCAN_SCRIPT='./metasploit_scan_script'
 
 nmap $OPTIONS $TARGETS $EXPORT scan-$date.xml
