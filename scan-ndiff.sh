@@ -6,8 +6,7 @@ EXPORT="-oX"
 USER_FILE='./users.txt'       # change this
 PASS_FILE='./passwords.txt'   # change this 
 date=`date +%F`
-# METASPLOIT SCAN SCRIPT 
-METASPLOIT_SCAN_SCRIPT='./metasploit_scan_script'
+METASPLOIT_SCAN_SCRIPT='./metasploit_scan_script' # METASPLOIT SCAN SCRIPT 
 
 nmap $OPTIONS $TARGETS $EXPORT scan-$date.xml
 
