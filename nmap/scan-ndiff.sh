@@ -3,7 +3,7 @@
 TARGETS="./targets.txt"       # change this
 OPTIONS="-sV -Pn --script-args-file "
 OPTIONS_2="-iL "
-SCRIPTS="./scripts.txt"
+SCRIPTS="scripts.txt"
 EXPORT="-oX"
 date=`date +%F`
 
