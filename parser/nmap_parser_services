@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# examples from https://github.com/savon-noir/python-libnmap/tree/master/examples 
 
 from libnmap.parser import NmapParser
 
