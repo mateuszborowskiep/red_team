@@ -3,8 +3,8 @@
 TARGETS="./targets.txt"       # change this
 OPTIONS="-sV -Pn -script vuln,dns-brute,http-brute,http-form-brute,imap-brute,ipmi-brute,iscsi-brute,krb5-enum-users,ldap-brute,mikrotik-routeros-brute, -iL "
 EXPORT="-oX"
-USER_FILE='./users.txt'       # change this
-PASS_FILE='./passwords.txt'   # change this 
+USER_FILE='bruteforce/users.txt'       # change this
+PASS_FILE='bruteforce/passwords.txt'   # change this 
 date=`date +%F`
 METASPLOIT_SCAN_SCRIPT='./metasploit_scan_script' # METASPLOIT SCAN SCRIPT 
 
