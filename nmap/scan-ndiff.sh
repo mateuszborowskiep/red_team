@@ -1,7 +1,7 @@
 #!/bin/sh
 # requirement packages nmap, ndiff, metasploit-module, xsltproc
-TARGETS="./targets.txt"       # change this
-OPTIONS="-sV -Pn -iL"
+TARGETS="-iL ./targets.txt"       # change this
+OPTIONS="-sV -Pn "
 SCRIPTS="--script-args-file ./scripts.txt"
 EXPORT="-oX"
 date=`date +%F`
