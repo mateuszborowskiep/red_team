@@ -1,11 +1,12 @@
 #!/bin/sh
 # requirement packages nmap, ndiff, metasploit-module, xsltproc
 TARGETS="./targets.txt"       # change this
-OPTIONS="-sV -Pn -script vuln,dns-brute,http-brute,http-form-brute,imap-brute,ipmi-brute,iscsi-brute,krb5-enum-users,ldap-brute,mikrotik-routeros-brute, -iL "
+OPTIONS="-sV -Pn -iL"
+SCRIPTS="--script-args-file ./scripts.txt"
 EXPORT="-oX"
 date=`date +%F`
 
-nmap $OPTIONS $TARGETS $EXPORT scan-$date.xml
+nmap $OPTIONS $SCRIPTS $TARGETS $EXPORT scan-$date.xml
 
 echo '*** HTML EXPORT ***'
 xsltproc scan-$date.xml -o vuln-$date.htm  
