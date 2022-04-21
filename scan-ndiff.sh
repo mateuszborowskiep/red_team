@@ -3,10 +3,7 @@
 TARGETS="./targets.txt"       # change this
 OPTIONS="-sV -Pn -script vuln,dns-brute,http-brute,http-form-brute,imap-brute,ipmi-brute,iscsi-brute,krb5-enum-users,ldap-brute,mikrotik-routeros-brute, -iL "
 EXPORT="-oX"
-USER_FILE='bruteforce/users.txt'       # change this
-PASS_FILE='bruteforce/passwords.txt'   # change this 
 date=`date +%F`
-METASPLOIT_SCAN_SCRIPT='./metasploit_scan_script' # METASPLOIT SCAN SCRIPT 
 
 nmap $OPTIONS $TARGETS $EXPORT scan-$date.xml
 
@@ -26,11 +23,3 @@ ln -sf scan-$date.xml scan.prev.xml
 
 # report results in vuln-$date.html and vuln_changes-$date.html 
 
-### METASPLOIT ###
-echo 'metasploit is scanning...'
-        
-# start postgresql server
-service postgresql start
-        
-# 
-msfconsole -q -o "metasploit_scan.txt" -x "setg rhosts file:$TARGETS ; setg user_file $USER_FILE ; setg pass_file $PASS_FILE ; resource $METASPLOIT_SCAN_SCRIPT ; exit -y"
