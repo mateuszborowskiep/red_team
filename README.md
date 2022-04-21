@@ -4,10 +4,8 @@ Security inventory
     Add script on crontab 
     0 11 28 1-12 * /root/scan-ndiff.sh - run once in month at 12 
 2) wpscan - auto wordpress scan with wpscan, api, enumerate and randomize with export result to html 
-
-
+3) metasploit-scan - metasploit auto-scan for specified targets in file separetly instruction in metasploit_scan_script
+4) parser - nmap result parsing host_up and list off services 
 
 
 TD:
-1) Parsing nmap result to metasploit scanner doing faster msf scan
-2) Add more NSE nmap scripts and work with better information gathering 
