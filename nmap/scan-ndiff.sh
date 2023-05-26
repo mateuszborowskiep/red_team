@@ -1,7 +1,7 @@
 #!/bin/sh
 # requirement packages nmap, ndiff, metasploit-module, xsltproc
 TARGETS="./targets.txt"                                 # change this
-OPTIONS="-sV -Pn -O -T5 -PE -F --osscan-limit --max-rtt-timeout 100ms --max-parallelism 100 --script default,vuln -iL "  # options and categories to the script https://nmap.org/nsedoc/categories/version.html 
+OPTIONS="-p0- -v -A -T4 --script default,vuln -iL "  # options and categories to the script https://nmap.org/nsedoc/categories/version.html 
 EXPORT="-oX"
 date=`date +%F`
 
