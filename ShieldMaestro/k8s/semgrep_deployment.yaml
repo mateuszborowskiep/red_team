@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: semgrep-deployment
+spec:
+  replicas: 3  # Adjust the number of replicas based on your needs
+  selector:
+    matchLabels:
+      app: semgrep
+  template:
+    metadata:
+      labels:
+        app: semgrep
+    spec:
+      containers:
+      - name: semgrep
+        image: returntocorp/semgrep 
