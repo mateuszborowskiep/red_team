@@ -13,7 +13,7 @@ django-excel-response2==3.0.6
 django-six==1.0.5
 djangorestframework==3.14.0
 excel-base==1.0.4
-fastapi==0.109.0
+fastapi==0.109.1
 google-api-core==2.15.0
 google-auth==2.26.2
 google-cloud==0.34.0
